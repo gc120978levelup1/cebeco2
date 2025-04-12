@@ -1,0 +1,16 @@
+
+networks:
+  lamp-docker-network:
+    driver: bridge
+services:
+  www.garry.com:
+    build: 
+      context: .
+    container_name: 'www.garry.com'
+    restart: 'always'
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - lamp-docker-network
+
