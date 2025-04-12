@@ -9,8 +9,8 @@ WORKDIR /var/www/html
 COPY . .
 RUN a2enmod rewrite
 RUN apachectl restart
-#RUN chown -R root:root /var/www/html
-#RUN chmod -R 777 /var/www/html
+RUN chown -R root:root /var/www/html
+RUN chmod -R 777 /var/www/html
 RUN php artisan key:generate
 RUN php artisan storage:link
-#RUN php artisan migrate
+RUN php artisan migrate
